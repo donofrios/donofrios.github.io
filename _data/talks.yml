@@ -1,0 +1,93 @@
+# Sorted reverse-chronologically by the page on `date`.
+# type must match a key in _data/venues.yml (Conference / Seminar / Poster).
+# invited: true adds the secondary "Invited" badge.
+
+- type: Seminar
+  invited: true
+  title: "Tidal deformability of compact objects and the effects of an environment"
+  event: "gmunu meeting"
+  location: "La Sapienza University, Rome"
+  date: 2026-09-23
+  display_date: "23 Sep 2026"
+  note: "One-hour invited seminar (host: Paolo Pani)."
+
+- type: Conference
+  invited: false
+  title: "Tidal Love Numbers of Black Holes Dressed by Dark Matter"
+  event: "Dark Matter and Stars (ICDMS)"
+  location: "University of Southampton"
+  date: 2026-07-13
+  display_date: "13–15 Jul 2026"
+  note: "20-minute contributed talk. Fee waiver awarded."
+
+- type: Seminar
+  invited: true
+  title: "Tidal deformability of compact objects and the effects of an environment"
+  event: "Cosmo Talk"
+  location: "Queen Mary University of London"
+  date: 2026-07-08
+  display_date: "8 Jul 2026"
+  note: "One-hour invited seminar."
+
+- type: Conference
+  invited: false
+  title: "Tidal Love Numbers of Black Holes Dressed by Dark Matter"
+  event: "PASCOS 2026, String/Black Hole parallel session"
+  location: "University of Sheffield"
+  date: 2026-06-22
+  display_date: "22–26 Jun 2026"
+  note: "20-minute presentation. Fee waiver awarded."
+
+- type: Conference
+  invited: false
+  title: ""
+  event: "2nd Int. Conference on the Physics of the Two Infinities, Cosmology parallel session"
+  location: "University of Tokyo"
+  date: 2025-11-17
+  display_date: "17–21 Nov 2025"
+  note: "15-minute presentation. Funded by ILANCE-CNRS."
+
+- type: Seminar
+  invited: true
+  title: ""
+  event: "Seminar"
+  location: "Keio University, Tokyo"
+  date: 2025-11-17
+  display_date: "17 Nov 2025"
+  note: "20-minute invited seminar (host: Antonino Flachi)."
+
+- type: Seminar
+  invited: true
+  title: ""
+  event: "Seminar"
+  location: "Università degli Studi di Cagliari"
+  date: 2025-11-12
+  display_date: "12 Nov 2025"
+  note: "20-minute invited seminar (host: Riccardo Murgia)."
+
+- type: Conference
+  invited: false
+  title: ""
+  event: "6th BIG&C Meeting"
+  location: "ICE-CSIC, Barcelona"
+  date: 2025-07-04
+  display_date: "4 Jul 2025"
+  note: "20-minute presentation."
+
+- type: Poster
+  invited: false
+  title: ""
+  event: "Gravity 2025 Conference, YITP"
+  location: "Yukawa Institute for Theoretical Physics, Kyoto"
+  date: 2025-01-27
+  display_date: "27–31 Jan 2025"
+  note: "Poster presentation."
+
+- type: Conference
+  invited: false
+  title: ""
+  event: "GSSI–JHU Meeting"
+  location: "Assergi, Italy"
+  date: 2024-12-16
+  display_date: "16–18 Dec 2024"
+  note: "15-minute talk."

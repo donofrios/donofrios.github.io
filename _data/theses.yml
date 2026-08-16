@@ -1,0 +1,29 @@
+# Sorted reverse-chronologically by the page on `date`.
+# degree must match a key in _data/venues.yml (PhD / MSc / BSc).
+# Put the PDFs in assets/pdf/ and reference the filename in `pdf`.
+
+- degree: PhD
+  title: "Generalized Entropy and f(R) Gravity: Cosmological Constraints from Inflation to Dark Energy"
+  school: "ICE-CSIC / Universitat Autònoma de Barcelona"
+  supervisor: "Sergei D. Odintsov"
+  date: 2026-10-01
+  display_date: "2022–2026"
+  detail: "Submitted, defense expected October 2026"
+  pdf: phd_thesis.pdf
+
+- degree: MSc
+  title: "Classical metrics from quantum amplitudes: the Reissner-Nordström-Tangherlini metric from the graviton emission of charged scalars"
+  school: "Università La Sapienza, Rome"
+  supervisor: "Fabio Riccioni"
+  date: 2022-07-01
+  display_date: "2019–2022"
+  detail: "Grade 110L/110"
+  pdf: msc_thesis.pdf
+
+- degree: BSc
+  title: "Gravitational Love numbers"
+  school: "Università La Sapienza, Rome"
+  supervisor: "Andrea Maselli"
+  date: 2019-07-01
+  display_date: "2016–2019"
+  pdf: bsc_thesis.pdf
