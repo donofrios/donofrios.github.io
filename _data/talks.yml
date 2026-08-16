@@ -9,7 +9,7 @@
   location: "La Sapienza University, Rome"
   date: 2026-09-23
   display_date: "23 Sep 2026"
-  note: "One-hour invited seminar (host: Paolo Pani)."
+  note: "One-hour seminar (host: Paolo Pani)."
 
 - type: Conference
   invited: false
