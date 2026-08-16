@@ -47,6 +47,16 @@ _styles: |
     border-color: var(--global-theme-color);
     text-decoration: none;
   }
+
+  /* Year dividers inside Conferences/Scientific Activities (hand-written, carry class="cv-year"
+     directly) and inside Publications (jekyll-scholar emits plain h2.bibliography with no class
+     hook of its own, so that one is scoped through the wrapping #cv-publications-years id
+     instead). Same look as h2.bibliography on /talks/, /theses/, /publications/, just smaller --
+     this page already has its own larger h2.cv-h2 section headers doing the primary wayfinding. */
+  h2.cv-year,
+  #cv-publications-years h2.bibliography {
+    font-size: 1.3rem;
+  }
 ---
 
 {% assign profile = site.data.cv_latex.profile %}
@@ -101,19 +111,29 @@ _styles: |
 </div>
 
 <h2 class="cv-h2">Publications</h2>
-<div class="publications">
 {% comment %}
-  --group_by none: the site-wide group_by: year in _config.yml (shared with /publications/)
-  would otherwise render each year as its own <h2 class="bibliography">YEAR</h2> in here.
+  Site-wide group_by: year (_config.yml, shared with /publications/) renders each year as its
+  own <h2 class="bibliography">YEAR</h2> in here -- same tag+class as this page's own section
+  headers, but safely: these ones stay INSIDE .publications, so common.js's own
+  ".publications h2 -> data-toc-skip" rule excludes them from the sidebar TOC automatically.
+  The id below just scopes the smaller cv-year font size (see _styles) to this section.
 {% endcomment %}
-{% bibliography --group_by none %}
+<div class="publications" id="cv-publications-years">
+{% bibliography %}
 </div>
 
 <h2 class="cv-h2">Conferences</h2>
 <div class="publications">
-<ol class="bibliography">
 {% assign confs = site.data.talks | where_exp: "t", "t.type != 'Seminar'" | sort: "date" | reverse %}
+{% assign current_year = nil %}
 {% for k in confs %}
+  {% assign year = k.date | date: "%Y" %}
+  {% if year != current_year %}
+    {% unless forloop.first %}</ol>{% endunless %}
+    <h2 class="bibliography cv-year">{{ year }}</h2>
+    <ol class="bibliography">
+    {% assign current_year = year %}
+  {% endif %}
   <li>
     <div class="row">
       <div class="col col-sm-2 abbr">
@@ -136,9 +156,16 @@ _styles: |
 
 <h2 class="cv-h2">Scientific Activities</h2>
 <div class="publications">
-<ol class="bibliography">
 {% assign seminars = site.data.talks | where_exp: "t", "t.type == 'Seminar'" | sort: "date" | reverse %}
+{% assign current_year = nil %}
 {% for k in seminars %}
+  {% assign year = k.date | date: "%Y" %}
+  {% if year != current_year %}
+    {% unless forloop.first %}</ol>{% endunless %}
+    <h2 class="bibliography cv-year">{{ year }}</h2>
+    <ol class="bibliography">
+    {% assign current_year = year %}
+  {% endif %}
   <li>
     <div class="row">
       <div class="col col-sm-2 abbr">
@@ -156,21 +183,26 @@ _styles: |
     </div>
   </li>
 {% endfor %}
-{% for e in site.data.cv_extra.scientific_activities_extra %}
-  <li>
-    <div class="row">
-      <div class="col col-sm-2 abbr">
-        {% assign v = site.data.venues["Ongoing"] %}
-        <abbr class="badge rounded w-100"{% if v.color %} style="background-color:{{ v.color }}"{% endif %}><div>Ongoing</div></abbr>
-      </div>
-      <div class="col-sm-10">
-        <div class="title">{{ e.title }}</div>
-        <div class="author">{{ e.description }}</div>
-      </div>
-    </div>
-  </li>
-{% endfor %}
 </ol>
+{% if site.data.cv_extra.scientific_activities_extra != empty %}
+  <h2 class="bibliography cv-year">Ongoing</h2>
+  <ol class="bibliography">
+  {% for e in site.data.cv_extra.scientific_activities_extra %}
+    <li>
+      <div class="row">
+        <div class="col col-sm-2 abbr">
+          {% assign v = site.data.venues["Ongoing"] %}
+          <abbr class="badge rounded w-100"{% if v.color %} style="background-color:{{ v.color }}"{% endif %}><div>Ongoing</div></abbr>
+        </div>
+        <div class="col-sm-10">
+          <div class="title">{{ e.title }}</div>
+          <div class="author">{{ e.description }}</div>
+        </div>
+      </div>
+    </li>
+  {% endfor %}
+  </ol>
+{% endif %}
 </div>
 
 <h2 class="cv-h2">Visiting Experiences</h2>
