@@ -1,0 +1,42 @@
+name: Update publications from INSPIRE
+
+on:
+  schedule:
+    - cron: "0 5 * * 1"   # every Monday, 05:00 UTC
+  workflow_dispatch:        # adds a manual "Run workflow" button
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  update-bib:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch BibTeX from INSPIRE
+        run: |
+          curl -sfG "https://inspirehep.net/api/literature" \
+            --data-urlencode "q=a S.DOnofrio.1" \
+            --data-urlencode "sort=mostrecent" \
+            --data-urlencode "size=250" \
+            --data-urlencode "format=bibtex" \
+            -o _bibliography/papers.bib
+          # guard: refuse to overwrite with an empty or error response
+          test -s _bibliography/papers.bib && grep -q "@" _bibliography/papers.bib
+
+      - name: Commit and redeploy if changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- _bibliography/papers.bib; then
+            echo "No change."
+          else
+            git add _bibliography/papers.bib
+            git commit -m "Auto-update publications from INSPIRE"
+            git push
+            gh workflow run "Deploy site" --ref main
+          fi
