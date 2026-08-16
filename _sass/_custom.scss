@@ -3,6 +3,18 @@
  * Local override — see docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo.
  ******************************************************************************/
 
+/*******************************************************************************
+ * al_folio_core's h2.bibliography (the year headers on /talks/, /theses/, and
+ * /publications/) uses --global-divider-color for its text color -- meant for
+ * hairline borders, not body text, and a near-invisible dark grey (#424246)
+ * against this site's dark background image. Use the real text-color token
+ * instead so the year headers stay legible in both light and dark mode.
+ ******************************************************************************/
+
+.publications h2.bibliography {
+  color: var(--global-text-color);
+}
+
 @mixin glass-card {
   background-color: color-mix(in srgb, var(--global-card-bg-color) 80%, transparent);
   backdrop-filter: blur(10px);

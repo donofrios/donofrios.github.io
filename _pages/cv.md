@@ -24,19 +24,36 @@ _styles: |
     margin-bottom: 1rem;
     text-align: right;
   }
+
+  .cv-downloads {
+    margin-bottom: 1.5rem;
+  }
+
+  .cv-download-btn {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    margin-right: 1rem;
+    margin-bottom: 0.75rem;
+    border: 2px solid var(--global-text-color);
+    border-radius: 8px;
+    color: var(--global-text-color);
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .cv-download-btn:hover {
+    color: var(--global-theme-color);
+    border-color: var(--global-theme-color);
+    text-decoration: none;
+  }
 ---
 
 {% assign profile = site.data.cv_latex.profile %}
 
-<p>
-  <a href="{{ '/assets/pdf/CV.pdf' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Download PDF</a>
-  <a href="{{ '/assets/pdf/cv_latex.zip' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">Download LaTeX project</a>
-</p>
-
-<p>
-  {% if profile.email %}<a href="mailto:{{ profile.email }}">{{ profile.email }}</a>{% endif %}
-  {% if profile.address.city %} &middot; {{ profile.address.city }}{% if profile.address.region %}, {{ profile.address.region }}{% endif %}{% endif %}
-  {% if profile.website %} &middot; <a href="{{ profile.website }}" target="_blank" rel="noopener">{{ profile.website }}</a>{% endif %}
+<p class="cv-downloads">
+  <a href="{{ '/assets/pdf/CV.pdf' | relative_url }}" class="cv-download-btn" role="button" target="_blank">Download PDF</a>
+  <a href="{{ '/assets/pdf/cv_latex.zip' | relative_url }}" class="cv-download-btn" role="button" target="_blank">Download LaTeX project</a>
 </p>
 {% if profile.label != blank %}<p>{{ profile.label }}</p>{% endif %}
 {% if profile.summary != blank %}<p>{{ profile.summary }}</p>{% endif %}
