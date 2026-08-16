@@ -23,8 +23,10 @@ jobs:
             --data-urlencode "size=250" \
             --data-urlencode "format=bibtex" \
             -o _bibliography/papers.bib
-          # guard: refuse to overwrite with an empty or error response
           test -s _bibliography/papers.bib && grep -q "@" _bibliography/papers.bib
+
+      - name: Add journal badges and featured flags
+        run: python3 .github/scripts/enrich_bib.py
 
       - name: Commit and redeploy if changed
         env:
