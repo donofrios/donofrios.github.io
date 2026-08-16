@@ -21,9 +21,11 @@ __pycache__/
 *.pyc
 
 # CV build outputs: regenerated from _data/cv_latex/*, _data/talks.yml,
-# and _bibliography/papers.bib by scripts/build_cv.py / build-cv.yml.
+# and _bibliography/papers.bib by scripts/build_cv.py, which both build-cv.yml
+# (PDF/zip) and deploy.yml (HTML page) run before their respective builds.
 cv-latex/Bibliography.bib
 cv-latex/generated/
+_data/cv_extra.yml
 cv-latex/*.aux
 cv-latex/*.bbl
 cv-latex/*.bcf

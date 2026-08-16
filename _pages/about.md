@@ -9,7 +9,7 @@ profile:
   align: right
   image: profile_pic.jpeg
   image_circular: false # crops the image to make it circular
-  more_info: <a href='donofrio@ice.csic.es'>donofrio@ice.csic.es</a>
+  #more_info: <a href='donofrio@ice.csic.es'>donofrio@ice.csic.es</a>
 
 selected_papers: false # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page

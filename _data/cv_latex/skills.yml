@@ -7,10 +7,10 @@
 #   details: LaTeX
 
 - label: "Expertise"
-  details: "Quantum Field Theories, General Relativity, Theoretical and Observational Cosmology, Modified Gravity Theories, Compact Objects, Numerical Simulations, Gravitational Waves, Gravity as an Effective Field Theory, Tidal deformability"
+  details: "Theoretical and Observational Cosmology, Modified Gravity Theories, Gravitational Waves, Compact Objects, Tidal deformability, Gravity from Scattering Amplitudes"
 
 - label: "Computer"
-  details: "Deep knowledge of C, C++, Python, Mathematica (including xAct package), Shell Scripting, LaTeX, RStudio, C\\#. Ability to use computing clusters and parallelize programs."
+  details: "Deep knowledge of C++, Python, Mathematica (including xAct package). Ability to use computing clusters and parallelize programs."
 
 - label: "Languages"
   details: "English (fluent), Spanish (fluent), Italian (native) and Catalan (basic)."

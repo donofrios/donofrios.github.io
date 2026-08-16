@@ -61,11 +61,11 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add assets/pdf/CV.pdf assets/pdf/cv_latex.zip _data/cv_extra.yml
+          git add assets/pdf/CV.pdf assets/pdf/cv_latex.zip
           if git diff --cached --quiet; then
             echo "No change."
           else
-            git commit -m "Auto-build CV.pdf, cv_latex.zip, and the HTML CV data"
+            git commit -m "Auto-build CV.pdf and cv_latex.zip"
             git push
             gh workflow run "Deploy site" --ref main
           fi

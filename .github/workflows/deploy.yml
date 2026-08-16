@@ -91,6 +91,14 @@ jobs:
           valueFile: "_config.yml"
           propertyPath: "giscus.repo"
           value: ${{ github.repository }}
+      - name: Render CV data 📝
+        # _data/cv_extra.yml (Skills/Visiting/Outreach/standing-activities, converted from the
+        # raw LaTeX in _data/cv_latex/*.yml) is a build artifact, not a committed file -- same
+        # deal as cv-latex/generated/*.tex, just needed here too since this build renders the
+        # HTML CV. See cv-latex/README.md.
+        run: |
+          pip3 install --quiet pyyaml
+          python3 scripts/build_cv.py
       - name: Install and Build 🔧
         run: |
           sudo apt-get update && sudo apt-get install -y imagemagick
