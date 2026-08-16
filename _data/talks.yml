@@ -3,7 +3,7 @@
 # invited: true adds the secondary "Invited" badge.
 
 - type: Seminar
-  invited: true
+  invited: false
   title: "Tidal deformability of compact objects and the effects of an environment"
   event: "gmunu meeting"
   location: "La Sapienza University, Rome"

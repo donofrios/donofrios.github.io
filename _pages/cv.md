@@ -13,7 +13,11 @@ toc:
 # styled to match h2.bibliography via this page-scoped stylesheet instead.
 _styles: |
   h2.cv-h2 {
-    color: var(--global-divider-color);
+    /* The original h2.bibliography uses --global-divider-color for both the border AND the
+       text -- fine for a hairline border, but that token is a near-invisible dark grey
+       (#424246) in dark mode, meant for subtle dividers, not readable text. Use the theme's
+       actual text-color token for the text so it stays high-contrast in both modes. */
+    color: var(--global-text-color);
     border-top: 1px solid var(--global-divider-color);
     padding-top: 1rem;
     margin-top: 2rem;
