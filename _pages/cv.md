@@ -22,7 +22,7 @@ _styles: |
     padding-top: 1rem;
     margin-top: 2rem;
     margin-bottom: 1rem;
-    text-align: right;
+    text-align: left;
   }
 
   .cv-downloads {
@@ -53,9 +53,10 @@ _styles: |
      hook of its own, so that one is scoped through the wrapping #cv-publications-years id
      instead). Same look as h2.bibliography on /talks/, /theses/, /publications/, just smaller --
      this page already has its own larger h2.cv-h2 section headers doing the primary wayfinding. */
-  h2.cv-year,
+  .publications h2.cv-year,
   #cv-publications-years h2.bibliography {
     font-size: 1.3rem;
+    text-align: left;
   }
 ---
 
