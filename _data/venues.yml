@@ -1,9 +1,27 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
+"PRD":
+  url: https://journals.aps.org/prd/
+  color: "#8B1A1A"
 
-"PhysRev":
-  url: https://journals.aps.org/
+"PDU":
+  url: https://www.sciencedirect.com/journal/physics-of-the-dark-universe
+  color: "#5D3A9B"
 
-"Vision":
-  color: "#009f36"
+"Universe":
+  url: https://www.mdpi.com/journal/universe
+  color: "#1E8449"
+
+"JHEP":
+  url: https://link.springer.com/journal/13130
+  color: "#117A65"
+
+"IJGMMP":
+  url: https://www.worldscientific.com/worldscinet/ijgmmp
+  color: "#B7950B"
+
+"EPJC":
+  url: https://link.springer.com/journal/10052
+  color: "#1F618D"
+
+"AoP":
+  url: https://www.sciencedirect.com/journal/annals-of-physics
+  color: "#CA6F1E"
