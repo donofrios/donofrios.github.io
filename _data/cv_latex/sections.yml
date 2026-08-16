@@ -1,0 +1,11 @@
+# Which dynamic sections scripts/build_cv.py includes in the compiled CV.pdf.
+# Set any value to false to drop that section (heading and all) from the next
+# build. This only affects the PDF — the HTML CV at /cv/ always shows every
+# section that has data.
+
+education: true
+skills: true
+conferences: true
+scientific_activities: true
+visiting: true
+outreach: true

@@ -1,0 +1,255 @@
+%-------------------------
+% Resume in Latex
+% Author : Abey George
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+\usepackage{filecontents}
+
+\usepackage[backend=biber,sorting=ydnt,defernumbers=true,defernumbers=true,maxbibnames=4]{biblatex}
+\addbibresource{Bibliography.bib}
+
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{graphicx}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+\usepackage{orcidlink}
+
+\RequirePackage{tikz}
+\RequirePackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{svg.path}
+
+
+\definecolor{cvblue}{HTML}{0E5484}
+\definecolor{black}{HTML}{130810}
+\definecolor{darkcolor}{HTML}{0F4539}
+\definecolor{cvgreen}{HTML}{3BD80D}
+\definecolor{taggreen}{HTML}{00E278}
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\colorlet{name}{black}
+\colorlet{tagline}{darkcolor}
+\colorlet{heading}{darkcolor}
+\colorlet{headingrule}{cvblue}
+\colorlet{accent}{darkcolor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+% \pagestyle{fancy}
+% \fancyhf{}  % clear all header and footer fields
+% \fancyfoot{}
+% \renewcommand{\headrulewidth}{0pt}
+% \renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+\newcommand{\mycomment}[1]{}
+
+% Section on/off switches, controlled by _data/cv_latex/sections.yml and set by
+% scripts/build_cv.py in generated/flags.tex. Undefined (e.g. if generated/flags.tex
+% hasn't been built yet) defaults every switch to true via \providecommand below.
+\newif\ifCvEducation
+\newif\ifCvSkills
+\newif\ifCvConferences
+\newif\ifCvScientificActivities
+\newif\ifCvVisiting
+\newif\ifCvOutreach
+\CvEducationtrue
+\CvSkillstrue
+\CvConferencestrue
+\CvScientificActivitiestrue
+\CvVisitingtrue
+\CvOutreachtrue
+\IfFileExists{generated/flags.tex}{\input{generated/flags.tex}}{}
+
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large#1} & \hfill\textbf{\small #2} \\
+      \textit{\large#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-13pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}\vspace{-14pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-.5cm}}
+
+
+\newcommand\sbullet[1][.5]{\mathbin{\vcenter{\hbox{\scalebox{#1}{$\bullet$}}}}}
+
+\usepackage{graphicx}
+\let\orighref\href
+\newcommand{\inspirelink}{\orighref{https://inspirehep.net/authors/2624575?ui-citation-summary=true}{\includegraphics[width=16pt]{inspire_icon.jpg}}} 
+\newcommand{\githublink}{\orighref{https://github.com/zmonneee}{\includegraphics[width=16pt]{github_icon.png}}}
+
+\newenvironment{indentedtext}{
+  \vspace{-0.5cm}
+  \begin{list}{}{
+    \setlength{\leftmargin}{0.5em}   % ← adjust indentation width
+    \setlength{\rightmargin}{0pt}
+  }
+  \item[]
+}{
+  \end{list}
+} 
+
+
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+
+
+\begin{center}
+    {\Huge \scshape Simone D'Onofrio \orcidlink{0000-0001-7925-3905}\hspace{-0.cm} \inspirelink \hspace{0.3cm}\githublink} \\ \vspace{1pt}
+    Rome, Italy, 26/7/1997 \\ \vspace{1pt}
+    \small \href{mailto:zmonnayo@gmail.com}{\raisebox{-0.2\height}\faEnvelope\  \underline{zmonnayo@gmail.com}} \hspace{0.2cm}\href{mailto:donofrio@ice.csic.es}{\raisebox{-0.2\height}\faEnvelope\  \underline{donofrio@ice.csic.es}} 
+\end{center}
+
+
+%-----------EDUCATION-----------
+\ifCvEducation
+\section{EDUCATION}
+\input{generated/education.tex}
+\fi
+
+%-----------SKILLS-----------
+\ifCvSkills
+\section{SKILLS}
+\input{generated/skills.tex}
+\fi
+
+%-----------PUBBLICATIONS-----------
+\nocite{*}
+\printbibliography[title={PUBLICATIONS}]
+\vspace{-11pt}
+
+%-----------INVOLVEMENT---------------
+\ifCvConferences
+\section{CONFERENCES}
+\input{generated/conferences.tex}
+\fi
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%------------SEMINAR--------
+\ifCvScientificActivities
+\section{SCIENTIFIC ACTIVITIES}
+\input{generated/scientific_activities.tex}
+\fi
+
+%------------VISITING--------
+\ifCvVisiting
+\section{VISITING EXPERIENCES}
+\input{generated/visiting.tex}
+\fi
+
+%-----------INVOLVEMENT---------------
+\ifCvOutreach
+\section{OUTREACH ACTIVITIES}
+\input{generated/outreach.tex}
+\fi
+
+
+
+
+
+\mycomment{\section{PUBLICATIONS with Contributions}
+
+\begin{itemize}
+    \item\indent\fullcite{donofrio2025iloveqrelationsneutronstars}\\[5pt]
+\item\indent\fullcite{odintsov2025generalizedentropicdarkenergy}\\[5pt]
+\item\indent\fullcite{odintsov2024primordialgravitationalwaveshorizon}\\[5pt]
+\item\indent\fullcite{odintsov2023entropicinflationpresencescalar}\\[5pt]
+\item\indent\fullcite{D_Onofrio_2023}\\[5pt]
+\item\indent\fullcite{Odintsov_2023}\\[5pt]
+\item\indent\fullcite{D_Onofrio_2022}\\[5pt]
+\end{itemize}
+}
+
+\end{document}

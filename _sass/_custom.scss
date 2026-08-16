@@ -1,0 +1,169 @@
+/*******************************************************************************
+ * Site-wide background image + translucent "glass" content panel(s).
+ * Local override — see docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo.
+ ******************************************************************************/
+
+@mixin glass-card {
+  background-color: color-mix(in srgb, var(--global-card-bg-color) 80%, transparent);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+}
+
+body {
+  background: transparent;
+}
+
+.container[role="main"] {
+  @include glass-card;
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 575.98px) {
+  .container[role="main"] {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+}
+
+/* About page: two separate "windows" instead of one card — the outer container
+   becomes a plain layout wrapper and each .glass-panel gets the card look. */
+.container[role="main"].split-panels {
+  background: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  box-shadow: none;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+.glass-panel {
+  @include glass-card;
+  margin-bottom: 2rem;
+  overflow: hidden; // contain the floated profile photo so the card wraps around it
+}
+
+.split-panels .glass-panel:last-child {
+  margin-bottom: 3rem;
+}
+
+@media (max-width: 575.98px) {
+  .glass-panel {
+    padding: 1.25rem;
+    border-radius: 8px;
+  }
+}
+
+/*******************************************************************************
+ * Profile panel: photo + (name, affiliation, social icons) as two balanced
+ * flex columns instead of a floated image with centered text underneath.
+ ******************************************************************************/
+
+.profile-panel {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  overflow: visible; // the flex layout no longer needs float containment
+}
+
+.profile-panel.profile-align-right {
+  flex-direction: row-reverse;
+}
+
+.profile-panel .profile-photo {
+  flex: 0 0 auto;
+  margin: 0; // drop the gem's float margins, gap above handles spacing
+}
+
+.profile-panel .profile-text {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.profile-panel .post-header {
+  text-align: left;
+}
+
+.profile-panel .post-title {
+  margin-bottom: 0.25rem;
+}
+
+.profile-panel .social {
+  text-align: left;
+  margin-top: 1.25rem;
+}
+
+.profile-panel .social .contact-icons {
+  font-size: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: flex-start;
+}
+
+.profile-panel .social .contact-icons a img,
+.profile-panel .social .contact-icons a svg {
+  margin-bottom: 0;
+}
+
+@media (max-width: 767.98px) {
+  .profile-panel,
+  .profile-panel.profile-align-right {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-panel .profile-photo {
+    width: 55%;
+    max-width: 220px;
+  }
+
+  .profile-panel .post-header,
+  .profile-panel .social {
+    text-align: center;
+  }
+
+  .profile-panel .social .contact-icons {
+    justify-content: center;
+  }
+}
+
+/*******************************************************************************
+ * Hero spacer (about page): leaves the fixed background fully visible for one
+ * viewport height, with a bouncing chevron hinting the user to scroll down.
+ ******************************************************************************/
+
+.hero-spacer {
+  position: relative;
+  min-height: calc(100vh - 57px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.hero-scroll-hint {
+  margin-bottom: 1.5rem;
+  color: #fff;
+  font-size: 1.75rem;
+  filter: drop-shadow(0 1px 4px rgba(0, 0, 0, 0.5));
+  animation: hero-scroll-bounce 2s ease-in-out infinite;
+}
+
+@keyframes hero-scroll-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(10px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-scroll-hint {
+    animation: none;
+  }
+}

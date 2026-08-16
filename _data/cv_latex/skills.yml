@@ -1,0 +1,16 @@
+# Feeds the SKILLS section of cv-latex/main.tex (scripts/build_cv.py).
+# Rendered in listed order as \item\textbf{\normalsize{LABEL:}} \normalsize{DETAILS}.
+# Values are raw LaTeX (CV-only file, never rendered to HTML).
+#
+# Schema per entry:
+#   label:   LaTeX, short category name (colon is added by the generator)
+#   details: LaTeX
+
+- label: "Expertise"
+  details: "Quantum Field Theories, General Relativity, Theoretical and Observational Cosmology, Modified Gravity Theories, Compact Objects, Numerical Simulations, Gravitational Waves, Gravity as an Effective Field Theory, Tidal deformability"
+
+- label: "Computer"
+  details: "Deep knowledge of C, C++, Python, Mathematica (including xAct package), Shell Scripting, LaTeX, RStudio, C\\#. Ability to use computing clusters and parallelize programs."
+
+- label: "Languages"
+  details: "English (fluent), Spanish (fluent), Italian (native) and Catalan (basic)."

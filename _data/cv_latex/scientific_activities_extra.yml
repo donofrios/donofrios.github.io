@@ -1,0 +1,11 @@
+# Standing SCIENTIFIC ACTIVITIES entries that have no single date and so
+# don't fit _data/talks.yml's date-keyed schema (e.g. ongoing refereeing).
+# Appended after the talks.yml-derived (Seminar) entries, in listed order.
+# Values are raw LaTeX (CV-only file, never rendered to HTML).
+#
+# Schema per entry:
+#   title:       LaTeX
+#   description: LaTeX
+
+- title: "Refereeing activities"
+  description: "I have refereed more than ten papers for various journals, among which \\textit{Physics of the Dark Universe} and \\textit{JHEAP}."

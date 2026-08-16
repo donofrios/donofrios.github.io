@@ -8,9 +8,16 @@ nav_order: 5
 ---
 
 <div class="publications">
-<ol class="bibliography">
 {% assign theses = site.data.theses | sort: "date" | reverse %}
+{% assign current_year = nil %}
 {% for t in theses %}
+  {% assign year = t.date | date: "%Y" %}
+  {% if year != current_year %}
+    {% unless forloop.first %}</ol>{% endunless %}
+    <h2 class="bibliography">{{ year }}</h2>
+    <ol class="bibliography">
+    {% assign current_year = year %}
+  {% endif %}
   <li>
     <div class="row">
       <div class="col col-sm-2 abbr">

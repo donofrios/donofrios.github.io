@@ -19,3 +19,19 @@ vendor
 # Python bytecode from bin/ helper scripts
 __pycache__/
 *.pyc
+
+# CV build outputs: regenerated from _data/cv_latex/*, _data/talks.yml,
+# and _bibliography/papers.bib by scripts/build_cv.py / build-cv.yml.
+cv-latex/Bibliography.bib
+cv-latex/generated/
+cv-latex/*.aux
+cv-latex/*.bbl
+cv-latex/*.bcf
+cv-latex/*.blg
+cv-latex/*.log
+cv-latex/*.out
+cv-latex/*.run.xml
+cv-latex/*.fdb_latexmk
+cv-latex/*.fls
+cv-latex/*.pdf
+cv-latex/*.xml

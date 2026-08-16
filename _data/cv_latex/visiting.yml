@@ -1,0 +1,32 @@
+# Feeds the VISITING EXPERIENCES section of cv-latex/main.tex (scripts/build_cv.py).
+# Reverse-chronological order; render as listed (no auto-sort).
+# Values are raw LaTeX (CV-only file, never rendered to HTML).
+#
+# Schema per entry:
+#   title:       LaTeX, e.g. "Invited visiting student to University of Sheffield"
+#   date_range:  e.g. "28/09 - 9/10 2026"
+#   description: LaTeX or null
+
+- title: "Invited visiting student to University of Sheffield"
+  date_range: "28/09 - 9/10 2026"
+  description: "With Prof. Eleonora Di Valentino and funded by the STSM project of the COST Action CA21136"
+
+- title: "Visiting student to University of Sheffield"
+  date_range: "June--July 2026"
+  description: "With Prof. Eleonora Di Valentino"
+
+- title: "Invited visit to Università degli Studi di Cagliari"
+  date_range: "8-14/11/2025"
+  description: "With Prof. Riccardo Murgia"
+
+- title: "Invited visit to GSSI institute"
+  date_range: "9-13/6/2025"
+  description: "With Prof. Andrea Maselli"
+
+- title: "Visiting student to GSSI institute"
+  date_range: "November--December 2024"
+  description: "With Prof. Andrea Maselli"
+
+- title: "Visiting student at Università Federico II of Naples"
+  date_range: "September--October 2023"
+  description: "With Prof. Mariafelicia De Laurentis"
