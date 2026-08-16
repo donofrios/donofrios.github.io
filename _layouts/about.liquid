@@ -1,9 +1,11 @@
 ---
 layout: default
 ---
-<!-- Local override: splits the profile card (name, affiliation, photo, social
-     links) from the biography into two separate glass panels. See
-     docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo. -->
+<!--
+  Local override: splits the profile card (name, affiliation, photo, social
+  links) from the biography into two separate glass panels. See
+  docs/ARCHITECTURE.md#local-overrides-your-site-vs-this-repo.
+-->
 <div class="glass-panel profile-panel profile-align-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
   {% if page.profile %}
     <div class="profile profile-photo">
@@ -32,8 +34,9 @@ layout: default
     <header class="post-header">
       <h1 class="post-title">
         {% if site.title == 'blank' %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }}
-          {{ site.last_name }}
+          {{ site.first_name }}
+          {{ site.middle_name }}
+          <span class="font-weight-bold">{{ site.last_name }}</span>
         {% else %}
           {{ site.title }}
         {% endif %}

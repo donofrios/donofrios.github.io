@@ -40,7 +40,7 @@
 
 - type: Conference
   invited: false
-  title: ""
+  title: "Generalized entropic cosmology"
   event: "2nd Int. Conference on the Physics of the Two Infinities, Cosmology parallel session"
   location: "University of Tokyo"
   date: 2025-11-17
@@ -49,7 +49,7 @@
 
 - type: Seminar
   invited: true
-  title: ""
+  title: "Generalized entropic cosmology"
   event: "Seminar"
   location: "Keio University, Tokyo"
   date: 2025-11-17
@@ -58,7 +58,7 @@
 
 - type: Seminar
   invited: true
-  title: ""
+  title: "Generalized entropic cosmology"
   event: "Seminar"
   location: "Università degli Studi di Cagliari"
   date: 2025-11-12
@@ -67,7 +67,7 @@
 
 - type: Conference
   invited: false
-  title: ""
+  title: "Generalized entropies as dark energy models"
   event: "6th BIG&C Meeting"
   location: "ICE-CSIC, Barcelona"
   date: 2025-07-04
@@ -76,7 +76,7 @@
 
 - type: Poster
   invited: false
-  title: ""
+  title: "Generalized entropies as dark energy models"
   event: "Gravity 2025 Conference, YITP"
   location: "Yukawa Institute for Theoretical Physics, Kyoto"
   date: 2025-01-27
@@ -85,7 +85,7 @@
 
 - type: Conference
   invited: false
-  title: ""
+  title: "Generalized entropic cosmology: from inflation to reheating"
   event: "GSSI–JHU Meeting"
   location: "Assergi, Italy"
   date: 2024-12-16
