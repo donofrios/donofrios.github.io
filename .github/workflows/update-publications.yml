@@ -24,9 +24,18 @@ jobs:
             --data-urlencode "format=bibtex" \
             -o _bibliography/papers.bib
           test -s _bibliography/papers.bib && grep -q "@" _bibliography/papers.bib
+      
+      - name: Fetch INSPIRE record ids
+        run: |
+          curl -sfG "https://inspirehep.net/api/literature" \
+            --data-urlencode "q=a S.DOnofrio.1" \
+            --data-urlencode "size=250" \
+            --data-urlencode "fields=texkeys,control_number" \
+            -o inspire_ids.json
 
-      - name: Add journal badges and featured flags
+      - name: Add journal badges and INSPIRE ids
         run: python3 .github/scripts/enrich_bib.py
+
 
       - name: Commit and redeploy if changed
         env:
