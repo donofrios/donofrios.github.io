@@ -1,0 +1,47 @@
+# Feeds the EDUCATION section of cv-latex/main.tex (scripts/build_cv.py).
+# Reverse-chronological order; render as listed (no auto-sort).
+#
+# Field values are raw LaTeX (this file is CV-only, never rendered to HTML),
+# so \textbf, math mode, \\ line breaks etc. are written out directly, same
+# as the hand-written content it replaces.
+#
+# Schema per entry:
+#   degree:        LaTeX, e.g. "\textbf{Ph.D.}"
+#   field:         LaTeX, e.g. "Physics" or "Theoretical Physics - \textbf{110L/110}"
+#   date_range:    e.g. "2022 -- 2026"
+#   institution:   LaTeX
+#   location:      plain text
+#   thesis_title:  LaTeX, required
+#   thesis_status: LaTeX or null, e.g. "Submitted, defense expected October 2026"
+#   thesis_link:   URL or null
+#   supervisor:    LaTeX
+
+- degree: "\\textbf{Ph.D.}"
+  field: "Physics"
+  date_range: "2022 -- 2026"
+  institution: "ICE--CSIC /  Universitat Autònoma de Barcelona"
+  location: "Barcelona, Spain"
+  thesis_title: "Generalized Entropy and $f(R)$ Gravity:\\\\\\quad \\quad \\quad Cosmological Constraints from Inflation to Dark Energy"
+  thesis_status: "Submitted, defense expected October 2026"
+  thesis_link: null
+  supervisor: "Sergei D. Odintsov"
+
+- degree: "\\textbf{M.S.}"
+  field: "Theoretical Physics - \\textbf{110L/110}"
+  date_range: "2019 -- 2022"
+  institution: "Università La Sapienza"
+  location: "Rome, Italy"
+  thesis_title: "Classical metrics from quantum amplitudes. The Reissner-Nordström-Tangherlini metric\\\\\\quad \\quad \\quad  from\nthe graviton emission of charged scalars."
+  thesis_status: null
+  thesis_link: "https://inspirehep.net/literature/2079300"
+  supervisor: "Fabio Riccioni"
+
+- degree: "\\textbf{B.A.}"
+  field: "Physics"
+  date_range: "2016 -- 2019"
+  institution: "Università La Sapienza"
+  location: "Rome, Italy"
+  thesis_title: "Gravitational Love numbers"
+  thesis_status: null
+  thesis_link: null
+  supervisor: "Andrea Maselli"

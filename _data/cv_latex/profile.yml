@@ -1,0 +1,18 @@
+# Read directly by _pages/cv.md (as site.data.cv_latex.profile) for the header
+# of the HTML CV at /cv/. Plain text, no LaTeX -- unlike the other files in
+# this directory, this one is never fed to the PDF (cv-latex/main.tex's header
+# is hand-edited separately).
+#
+# name/email/location below are pulled from the header of cv-latex/main.tex and
+# _data/socials.yml, so they're already real. `label` and `summary` are the two
+# purely personal fields nothing else can derive -- fill those in yourself;
+# leave either blank to omit that line.
+
+name: "Simone D'Onofrio"
+label: ""
+email: "donofrio@ice.csic.es"
+website: "https://donofrios.github.io"
+address:
+  city: "Barcelona"
+  region: "Spain"
+summary: ""

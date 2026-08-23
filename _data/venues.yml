@@ -1,0 +1,38 @@
+"PRD":
+  url: https://journals.aps.org/prd/
+  color: "#8B1A1A"
+
+"PDU":
+  url: https://www.sciencedirect.com/journal/physics-of-the-dark-universe
+  color: "#5D3A9B"
+
+"Universe":
+  url: https://www.mdpi.com/journal/universe
+  color: "#1E8449"
+
+"JHEP":
+  url: https://link.springer.com/journal/13130
+  color: "#117A65"
+
+"IJGMMP":
+  url: https://www.worldscientific.com/worldscinet/ijgmmp
+  color: "#B7950B"
+
+"EPJC":
+  url: https://link.springer.com/journal/10052
+  color: "#1F618D"
+
+"AoP":
+  url: https://www.sciencedirect.com/journal/annals-of-physics
+  color: "#CA6F1E"
+
+"PhD": { color: "#1F618D" }
+"MSc": { color: "#117A65" }
+"BSc": { color: "#1E8449" }
+"Conference": { color: "#5D3A9B" }
+"Seminar": { color: "#CA6F1E" }
+"Poster": { color: "#5D6D7E" }
+"Invited": { color: "#B7950B" }
+"Visit": { color: "#0B5345" }
+"Outreach": { color: "#78281F" }
+"Ongoing": { color: "#566573" }

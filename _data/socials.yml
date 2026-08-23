@@ -1,0 +1,7 @@
+# this file contains the social media links and usernames of the author
+# the socials will be displayed in the order they are defined here
+# for more information, please refer to the documentation of jekyll-socials plugin: https://github.com/george-gca/jekyll-socials
+inspirehep_id: 2624575 # Inspire HEP author ID
+orcid_id: 0000-0001-7925-3905 # your ORCID ID
+email: donofrio@ice.csic.es # your email address
+github_username: donofrios # your GitHub username
