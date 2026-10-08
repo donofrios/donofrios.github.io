@@ -104,6 +104,33 @@ def fix_latex_accents(text):
     return unicodedata.normalize("NFC", _ACCENT_RE.sub(repl, text))
 
 
+# biber only *warns* about stray text between entries ("characters of junk seen at
+# toplevel") and jekyll-scholar silently tolerates it too, so a hand-edit that leaves
+# an extra "}" behind would otherwise ship unnoticed. Fail the build instead.
+def check_bib_structure(text, label):
+    depth = 0
+    errors = []
+    for lineno, line in enumerate(text.splitlines(), 1):
+        prev = None
+        for ch in line:
+            if prev != "\\":
+                if ch == "{":
+                    depth += 1
+                elif ch == "}":
+                    depth -= 1
+                    if depth < 0:
+                        errors.append(f"line {lineno}: unmatched '}}'")
+                        depth = 0
+            prev = ch
+        stripped = line.strip()
+        if depth == 0 and stripped and not stripped.startswith(("@", "}", "%")):
+            errors.append(f"line {lineno}: stray text outside any entry: {stripped!r}")
+    if depth:
+        errors.append(f"end of file: {depth} unclosed '{{'")
+    if errors:
+        sys.exit(f"{label} is malformed:\n  " + "\n  ".join(errors))
+
+
 # ---------------------------------------------------------------------------
 # LaTeX CV (cv-latex/generated/*.tex)
 # ---------------------------------------------------------------------------
@@ -377,6 +404,7 @@ def main():
     bib_src = REPO_ROOT / "_bibliography" / "papers.bib"
     bib_dst = CV_DIR / "Bibliography.bib"
     bib_text = bib_src.read_text(encoding="utf-8")
+    check_bib_structure(bib_text, bib_src.relative_to(REPO_ROOT))
     bib_text = fix_latex_accents(bib_text)
     bib_dst.write_text(bib_text, encoding="utf-8")
     print(f"copied {bib_src.relative_to(REPO_ROOT)} -> {bib_dst.relative_to(REPO_ROOT)} (accent-normalized)")
