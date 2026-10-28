@@ -28,7 +28,7 @@ locally.
 The HTML CV at `/cv/` ([`_pages/cv.md`](../_pages/cv.md)) is a **separate page that reads most of its content
 directly** from the same underlying sources — `_data/theses.yml` for Education, the site's own bibliography for
 Publications, `_data/talks.yml` for Conferences/Scientific Activities — no generator involved for those. The
-exception is Skills, Visiting Experiences, Outreach Activities, and the standing "Refereeing activities" line:
+exception is Skills, Visiting Experiences, Grants and Awards, Outreach Activities, and the standing "Refereeing activities" line:
 those live in `_data/cv_latex/*.yml` as **raw LaTeX** (`\textbf{}`, math mode, `\\` line breaks), which HTML can't
 render directly, so `build_cv.py` converts them to plain text and writes the result to `_data/cv_extra.yml`.
 
@@ -48,6 +48,7 @@ never gets committed.
 | The undated "Refereeing activities" line | [`_data/cv_latex/scientific_activities_extra.yml`](../_data/cv_latex/scientific_activities_extra.yml)                                                                               |
 | Skills                                   | [`_data/cv_latex/skills.yml`](../_data/cv_latex/skills.yml)                                                                                                                         |
 | Visiting experiences                     | [`_data/cv_latex/visiting.yml`](../_data/cv_latex/visiting.yml)                                                                                                                     |
+| Grants and awards                        | [`_data/cv_latex/grants.yml`](../_data/cv_latex/grants.yml)                                                                                                                         |
 | Outreach activities                      | [`_data/cv_latex/outreach.yml`](../_data/cv_latex/outreach.yml)                                                                                                                     |
 | Which sections go in the **PDF**         | [`_data/cv_latex/sections.yml`](../_data/cv_latex/sections.yml) — on/off switches, PDF only. The HTML CV always shows every section.                                                |
 | Publications                             | nothing here — the same INSPIRE-generated `_bibliography/papers.bib` the site uses is copied into `Bibliography.bib` at build time                                                  |
@@ -57,7 +58,7 @@ PDF needs a `field`/`location` breakdown the theses page has no use for, so it k
 rather than being migrated onto `_data/theses.yml` the way Conferences moved onto `_data/talks.yml`.
 
 Each `_data/cv_latex/*.yml` file documents its own schema in a header comment. Values in `education.yml`,
-`skills.yml`, `visiting.yml`, `outreach.yml`, and `scientific_activities_extra.yml` are raw LaTeX, matching what
+`skills.yml`, `visiting.yml`, `grants.yml`, `outreach.yml`, and `scientific_activities_extra.yml` are raw LaTeX, matching what
 they replaced in `main.tex` — `$...$` math is left alone when converted for HTML since MathJax is enabled
 site-wide (see `delatex()` in `build_cv.py`).
 

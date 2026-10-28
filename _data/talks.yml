@@ -1,5 +1,5 @@
 # Sorted reverse-chronologically by the page on `date`.
-# type must match a key in _data/venues.yml (Conference / Seminar / Poster).
+# type must match a key in _data/venues.yml (Conference / Seminar / Poster / School).
 # invited: true adds the secondary "Invited" badge.
 
 - type: Seminar
@@ -19,6 +19,15 @@
   date: 2026-09-23
   display_date: "23 Sep 2026"
   note: "One-hour seminar (host: Paolo Pani)."
+
+- type: Conference
+  invited: false
+  title: "Dynamical dark energy from exponential f(R) gravity: cosmological tensions and neutrino mass after DESI DR2"
+  event: "CosmoVerse@Bilbao 2026"
+  location: "Bilbao, Spain"
+  date: 2026-09-15
+  display_date: "15–18 Sep 2026"
+  note: "25-minute contributed talk, selected competitively. Travel grant awarded."
 
 - type: Conference
   invited: false
@@ -46,6 +55,15 @@
   date: 2026-06-22
   display_date: "22–26 Jun 2026"
   note: "20-minute presentation. Fee waiver awarded."
+
+- type: School
+  invited: false
+  title: null
+  event: "CosmoVerseSchool@Sofia 2026"
+  location: "Institute of Mechanics, Bulgarian Academy of Sciences, Sofia"
+  date: 2026-05-25
+  display_date: "25–29 May 2026"
+  note: "COST Action CA21136 training school. 2-minute lightning talk. Travel grant awarded."
 
 - type: Conference
   invited: false

@@ -4,29 +4,33 @@
 #
 # Schema per entry:
 #   title:       LaTeX, e.g. "Invited visiting student to University of Sheffield"
-#   date_range:  e.g. "28/09 - 9/10 2026"
+#   date_range:  month-name style, e.g. "28 Sep – 9 Oct 2026"
 #   description: LaTeX or null
 
+- title: "Visiting researcher at Niels Bohr Institute (upcoming)"
+  date_range: "25 Jan – 5 Feb 2027"
+  description: "University of Copenhagen, with Prof. Vitor Cardoso, funded by the Simons Collaboration on Black Holes and Strong Gravity"
+
 - title: "Invited visiting student to University of Sheffield"
-  date_range: "28/09 - 9/10 2026"
+  date_range: "28 Sep – 9 Oct 2026"
   description: "With Prof. Eleonora Di Valentino and funded by the STSM project of the COST Action CA21136"
 
 - title: "Visiting student to University of Sheffield"
-  date_range: "June--July 2026"
+  date_range: "Jun–Jul 2026"
   description: "With Prof. Eleonora Di Valentino"
 
 - title: "Invited visit to Università degli Studi di Cagliari"
-  date_range: "8-14/11/2025"
-  description: "With Prof. Riccardo Murgia"
+  date_range: "8–14 Nov 2025"
+  description: "With Prof. Riccardo Murgia, funded by host institution"
 
 - title: "Invited visit to GSSI institute"
-  date_range: "9-13/6/2025"
-  description: "With Prof. Andrea Maselli"
+  date_range: "9–13 Jun 2025"
+  description: "With Prof. Andrea Maselli, funded by host institution"
 
 - title: "Visiting student to GSSI institute"
-  date_range: "November--December 2024"
+  date_range: "Nov–Dec 2024"
   description: "With Prof. Andrea Maselli"
 
 - title: "Visiting student at Università Federico II of Naples"
-  date_range: "September--October 2023"
+  date_range: "Sep–Oct 2023"
   description: "With Prof. Mariafelicia De Laurentis"

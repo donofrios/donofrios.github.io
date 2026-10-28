@@ -159,6 +159,27 @@ _styles: |
 {% bibliography %}
 </div>
 
+<h2 class="cv-h2">Grants and Awards</h2>
+<div class="publications">
+<ol class="bibliography">
+{% for e in site.data.cv_extra.grants %}
+  <li>
+    <div class="row">
+      <div class="col col-sm-2 abbr">
+        {% assign v = site.data.venues["Grant"] %}
+        <abbr class="badge rounded w-100"{% if v.color %} style="background-color:{{ v.color }}"{% endif %}><div>Grant</div></abbr>
+      </div>
+      <div class="col-sm-10">
+        <div class="title">{{ e.title }}</div>
+        {% if e.description != blank %}<div class="author">{{ e.description }}</div>{% endif %}
+        <div class="periodical"><em>{{ e.date_range }}</em></div>
+      </div>
+    </div>
+  </li>
+{% endfor %}
+</ol>
+</div>
+
 <h2 class="cv-h2">Conferences</h2>
 <div class="publications">
 {% assign confs = site.data.talks | where_exp: "t", "t.type != 'Seminar'" | sort: "date" | reverse %}
