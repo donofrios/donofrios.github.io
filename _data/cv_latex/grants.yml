@@ -7,7 +7,7 @@
 #   title:       LaTeX, kept short -- it shares a line with the date in the PDF, so put
 #                the funder/scheme detail in description instead
 #   date_range:  dates of the funded visit/event, month-name style, e.g. "28 Sep – 9 Oct 2026"
-#   amount:      e.g. "\texteuro{}2,000" or "\$1,100", or null (shown first in the description)
+#   amount:      e.g. "2,000 EUR" or "1,100 USD", or null (shown first in the description)
 #   description: LaTeX or null
 
 - title: "FPI Predoctoral Fellowship, Spanish Ministry of Science and Innovation"
@@ -17,27 +17,27 @@
 
 - title: "Simons Strong Gravity Visit Grant"
   date_range: "25 Jan – 5 Feb 2027"
-  amount: "\\$1,100"
+  amount: "1,100 USD"
   description: "Long-Term Visit Program, Simons Collaboration on Black Holes and Strong Gravity. Supports my visit to the Niels Bohr Institute, University of Copenhagen, with Prof. Vitor Cardoso."
 
 - title: "Short-Term Scientific Mission grant, COST Action CA21136 (CosmoVerse)"
   date_range: "28 Sep – 9 Oct 2026"
-  amount: "\\texteuro{}2,000"
+  amount: "2,000 EUR"
   description: "Funded my research stay at the University of Sheffield with Prof. Eleonora Di Valentino."
 
 - title: "CosmoVerse@Bilbao 2026 Conference Grant"
   date_range: "15–18 Sep 2026"
-  amount: "\\texteuro{}1,000 plus flights"
+  amount: "1,000 EUR plus flights"
   description: "COST Action CA21136 (CosmoVerse). Travel and per diem support, awarded through a competitive selection together with a contributed talk."
 
 - title: "CosmoVerseSchool@Sofia 2026 Training School Grant"
   date_range: "25–29 May 2026"
-  amount: "\\texteuro{}1,190"
+  amount: "1,190 EUR"
   description: "COST Action CA21136 (CosmoVerse). Travel and per diem support (flights included)."
 
 - title: "Travel grant from ILANCE (CNRS / University of Tokyo)"
   date_range: "17–21 Nov 2025"
-  amount: "\\texteuro{}1,000"
+  amount: "1,000 EUR"
   description: "Covered the flight to Tokyo for the 2nd International Conference on the Physics of the Two Infinities."
 
 - title: "Conference fee waivers"
