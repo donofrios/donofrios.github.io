@@ -1,15 +1,17 @@
 # Sorted reverse-chronologically by the page on `date`.
 # degree must match a key in _data/venues.yml (PhD / MSc / BSc).
-# Put the PDFs in assets/pdf/ and reference the filename in `pdf`.
+# `pdf` is either a filename in assets/pdf/ or a full URL to the PDF.
+# `record` (optional) is the URL of the official repository record (e.g. TDX), shown as a TDX button.
 
 - degree: PhD
   title: "Generalized Entropy and f(R) Gravity: Cosmological Constraints from Inflation to Dark Energy"
   school: "ICE-CSIC / Universitat Autònoma de Barcelona"
   supervisor: "Sergei D. Odintsov"
-  date: 2026-10-01
+  date: 2026-10-29
   display_date: "2022–2026"
-  detail: "Submitted, defense expected October 2026"
-  pdf: phd_thesis.pdf
+  detail: "Defended 29 October 2026"
+  pdf: "https://www.tdx.cat/bitstream/handle/10803/698804/sd1de1.pdf?sequence=1&isAllowed=y"
+  record: "https://www.tdx.cat/handle/10803/698804"
 
 - degree: MSc
   title: "Classical metrics from quantum amplitudes: the Reissner-Nordström-Tangherlini metric from the graviton emission of charged scalars"

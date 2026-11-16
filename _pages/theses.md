@@ -29,7 +29,7 @@ nav_order: 5
         <div class="author">{{ t.school }}{% if t.supervisor %}. Supervisor: {{ t.supervisor }}{% endif %}</div>
         <div class="periodical"><em>{{ t.display_date }}{% if t.detail %}. {{ t.detail }}{% endif %}</em></div>
         {% if t.pdf %}
-        <div class="links"><a href="{{ t.pdf | prepend: '/assets/pdf/' | relative_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a></div>
+        <div class="links">{% if t.pdf contains '://' %}{% assign pdf_url = t.pdf %}{% else %}{% assign pdf_url = t.pdf | prepend: '/assets/pdf/' | relative_url %}{% endif %}<a href="{{ pdf_url }}" class="btn btn-sm z-depth-0" role="button" target="_blank">PDF</a>{% if t.record %} <a href="{{ t.record }}" class="btn btn-sm z-depth-0" role="button" target="_blank">TDX</a>{% endif %}</div>
         {% endif %}
       </div>
     </div>
